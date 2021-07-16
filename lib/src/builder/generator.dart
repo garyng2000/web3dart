@@ -57,8 +57,7 @@ class ContractGenerator implements Builder {
     final generation = _ContractGeneration(abi, abiCode, docs);
     final library = generation.generate();
 
-    final emitter = DartEmitter(
-        allocator: Allocator.simplePrefixing(), useNullSafetySyntax: true);
+    final emitter = DartEmitter(Allocator.simplePrefixing(), false, true);
     final source = '''
 // Generated code, do not modify. Run `build_runner build` to re-generate!
 // @dart=2.12
